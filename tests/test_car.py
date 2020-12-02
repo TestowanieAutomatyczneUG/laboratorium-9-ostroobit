@@ -1,5 +1,5 @@
 from src.car import Car
-from unittest.mock import Mock, call
+from unittest.mock import Mock
 from unittest import TestCase, main
 
 
@@ -32,6 +32,9 @@ class TestCar_public_interface(TestCase):
 
         result = test_object.driveTo()
         self.assertEqual("Warsaw", result, "incorrect")
+
+    def tearDown(self):
+        self.temp = None
 
 if __name__ == "main":
     main()
